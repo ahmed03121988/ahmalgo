@@ -1,0 +1,21 @@
+ALGORITHM alggg
+VAR
+    def is_palindrome(word):
+    # Convert the word to lowercase and remove any spaces or punctuation
+    word = word.lower().replace(' ', '').replace(',', '').replace('.', '').replace('!', '').replace('?', '')
+    # Initialize indices to compare characters at the beginning and end of the word
+    i = 0
+    j = len(word) - 1
+    # Loop until the indices cross or meet in the middle
+    
+BEGIN
+    while i < j:
+        # If the characters at the current indices don't match, the word is not a palindrome
+        if word[i] != word[j]:
+            return False
+        # Otherwise, move the indices inward to compare the next set of characters
+        i += 1
+        j -= 1
+    # If we've made it to the end of the loop, the word is a palindrome
+    return True
+END
